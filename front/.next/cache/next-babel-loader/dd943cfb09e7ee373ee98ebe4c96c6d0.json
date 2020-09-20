@@ -1,0 +1,1 @@
+{"ast":null,"code":"const LoginFrom = () => {};\n\nexport default LoginFrom;","map":{"version":3,"sources":["/Users/mac/nodeSocial/front/components/LoginForm.js"],"names":["LoginFrom"],"mappings":"AAAA,MAAMA,SAAS,GAAG,MAAM,CAEvB,CAFD;;AAIA,eAAeA,SAAf","sourcesContent":["const LoginFrom = () => {\n\n}\n\nexport default LoginFrom"]},"metadata":{},"sourceType":"module"}
