@@ -20,5 +20,5 @@ App.propTypes = {
     Component: PropTypes.elementType.isRequired,
 }
 
-export default App
-// export default wrapper.withRedux(nodeSNS);
+// export default App
+export default wrapper.withRedux(App);
