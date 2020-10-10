@@ -6,7 +6,7 @@ export const initialState = {
             nickname: 'supercoder',
         },
         content: '첫 번째 게시글 #헤시태그 #익스프레스',
-        Image: [{
+        Images: [{
             src: 'https://www.naver.com',
         }, {
             src: 'https://www.naver.com',
