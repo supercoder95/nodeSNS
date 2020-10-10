@@ -1,14 +1,17 @@
 import React, { useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { Card, Popover, Button } from 'antd'
+import { Card, Popover, Button, Avatar, List, Comment } from 'antd'
 import { RetweetOutlined, HeartOutlined, MessageOutlined, EllipsisOutlined, HeartTwoTone } from '@ant-design/icons'
-import Avatar from 'antd/lib/avatar/avatar'
+
 import PostImages from './PostImages'
+import CommentForm from './CommentForm'
+// import Avatar from 'antd/lib/avatar/avatar'
+// import { List } from 'antd/lib/form/Form'
 
 const PostCard = ({ post }) => {
     const [liked, setLiked] = useState(false)
-    const [CommnetFormOpend, setCommentFormOpened] = useState(false)
+    const [CommnetFormOpened, setCommentFormOpened] = useState(false)
     const id = useSelector((state) => state.user.me?.id)
     const onToggleLike = useCallback(() => {
         setLiked((prev) => !prev)
@@ -60,13 +63,25 @@ const PostCard = ({ post }) => {
                     description={post.content}
                 />
             </Card>
-            {CommnetFormOpend && (
+            {CommnetFormOpened && (
                 <div>
-                    댓글 부분
+                    <CommentForm post={post} />
+                    <List
+                        header={`${post.Comments.length}개의 댓글`}
+                        itemLayout="horizontal"
+                        dataSource={post.Comments}
+                        renderItem={(item) => (
+                            <li>
+                                <Comment
+                                    author={item.User.nickname}
+                                    avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                                    content={item.content}
+                                />
+                            </li>
+                        )}
+                    />
                 </div>
             )}
-            {/* <CommnetForm />
-            <Comments /> */}
         </div >
     )
 }

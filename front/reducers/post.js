@@ -17,8 +17,14 @@ export const initialState = {
             User: {
                 nickname: 'hero',
             },
-            content: '와 얼른 사고 싶어요',
-        }]
+            content: '드디어 댓글 구현이 되어가는군요',
+        },{
+            User: {
+                nickname: 'hypercoder',
+            },
+            content: '하이퍼코더 짜응'
+        }
+    ]
     }],
     imagePaths: [],
     postAdded: false,
