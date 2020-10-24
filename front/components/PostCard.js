@@ -6,6 +6,7 @@ import { RetweetOutlined, HeartOutlined, MessageOutlined, EllipsisOutlined, Hear
 
 import PostImages from './PostImages'
 import CommentForm from './CommentForm'
+import PostCardContent from './PostCardContent'
 // import Avatar from 'antd/lib/avatar/avatar'
 // import { List } from 'antd/lib/form/Form'
 
@@ -27,19 +28,19 @@ const PostCard = ({ post }) => {
                 actions={[
                     <RetweetOutlined key="retweet" />,
                     liked
-                    ? <HeartTwoTone 
-                    twoToneColor="#eb2f96" 
-                    key="heart" 
-                    onClick={onToggleLike} 
-                    />
-                    : <HeartOutlined 
-                    key="heart" 
-                    onClick={onToggleLike} 
-                    />,
+                        ? <HeartTwoTone
+                            twoToneColor="#eb2f96"
+                            key="heart"
+                            onClick={onToggleLike}
+                        />
+                        : <HeartOutlined
+                            key="heart"
+                            onClick={onToggleLike}
+                        />,
 
-                    <MessageOutlined 
-                    key="commnet"
-                    onClick={onToggleComment} 
+                    <MessageOutlined
+                        key="commnet"
+                        onClick={onToggleComment}
                     />,
                     <Popover key="more" content={(
                         <Button.Group>
@@ -60,7 +61,7 @@ const PostCard = ({ post }) => {
                 <Card.Meta
                     avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
                     title={post.User.nickname}
-                    description={post.content}
+                    description={<PostCardContent postData={post.content} />}
                 />
             </Card>
             {CommnetFormOpened && (
@@ -76,7 +77,7 @@ const PostCard = ({ post }) => {
                                     author={item.User.nickname}
                                     avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
                                     content={item.content}
-                                />      
+                                />
                             </li>
                         )}
                     />
