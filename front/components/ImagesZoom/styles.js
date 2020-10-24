@@ -37,7 +37,7 @@ export const Global = createGlobalStyle`
 `
 
 
-export const CloseBtn = styled(CloseOutlnied)`
+export const CloseBtn = styled(CloseOutlined)`
     position: absolute;
     right: 0;
     top: 0;
