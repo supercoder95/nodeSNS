@@ -5,14 +5,17 @@ export const initialState = {
             id: 1,
             nickname: 'supercoder',
         },
+
         content: '첫 번째 게시글 #헤시태그 #익스프레스',
+
         Images: [{
-            src: 'https://www.naver.com',
+            src: 'https://i3.ruliweb.com/img/20/10/24/17559455b8122edbd.jpg',
         }, {
-            src: 'https://www.naver.com',
-        }, {
-            src: 'https://www.naver.com',
+            src: 'https://i2.ruliweb.com/img/20/10/24/175593a071a1031c.png',
+        },{
+            src: 'https://i1.ruliweb.com/img/20/10/24/175593a299a1031c.jpeg'
         }],
+
         Comments: [{
             User: {
                 nickname: 'hero',
@@ -23,8 +26,7 @@ export const initialState = {
                 nickname: 'hypercoder',
             },
             content: '하이퍼코더 짜응'
-        }
-    ]
+        }]
     }],
     imagePaths: [],
     postAdded: false,
