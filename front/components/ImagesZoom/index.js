@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Slick from 'react-slick'
-// import styled, { createGlobalStyle } from 'styled-components'
-// import { CloseOutlined } from '@ant-design/icons'
-
-
+import { Overlay, Global, Header, CloseBtn, ImgWrapper, Indicator, SlickWrapper } from './styles'
 
 const ImagesZoom = ({ images, onClose }) => {
     const [currentSlide, setCurrnetSlide] = useState(0)
-    return(
+    return (
         <Overlay>
-        <Global />
+            <Global />
             <Header>
                 <h1>상세 이미지</h1>
                 <CloseBtn onClick={onClose}>X</CloseBtn>
@@ -22,7 +19,7 @@ const ImagesZoom = ({ images, onClose }) => {
                         afterChange={(slide) => setCurrnetSlide(slide)}
                         infinite
                         arrows={false}
-                        slidesToShow={1} 
+                        slidesToShow={1}
                         slidesToScroll={1}
                     >
                         {images.map((v) => (

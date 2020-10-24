@@ -3,7 +3,7 @@ import { CloseOutlined } from '@ant-design/icons'
 
 // styled component
 
-const Overlay = styled.div`
+export const Overlay = styled.div`
     position: fixed;
     z-index: 5000;
     top: 0;
@@ -12,17 +12,7 @@ const Overlay = styled.div`
     bottom: 0;
 `
 
-
-const Global = createGlobalStyle`
-    .slickslide {
-        display: inline-block;
-    }
-    .ant-card-cover {
-        transform: none !important;
-    }
-`
-
-const Header = styled.header`
+export const Header = styled.header`
     height: 44px;
     background: white;
     position: relative;
@@ -37,7 +27,17 @@ const Header = styled.header`
     }
 `
 
-const CloseBtn = styled(CloseOutlnied)`
+export const Global = createGlobalStyle`
+    .slickslide {
+        display: inline-block;
+    }
+    .ant-card-cover {
+        transform: none !important;
+    }
+`
+
+
+export const CloseBtn = styled(CloseOutlnied)`
     position: absolute;
     right: 0;
     top: 0;
@@ -46,12 +46,12 @@ const CloseBtn = styled(CloseOutlnied)`
     cursor: pointer;
 `
 
-const SlickWrapper = styled.div`
+export const SlickWrapper = styled.div`
     height: calc(100% - 44px);
     background: #090909;
 `
 
-const ImgWrapper = styled.div`
+export const ImgWrapper = styled.div`
     padding: 32px;
     text-align: center;
 
@@ -62,7 +62,7 @@ const ImgWrapper = styled.div`
 `
 
 
-const Indicator = styled.div`
+export const Indicator = styled.div`
     text-align: center;
 
     & > div {
