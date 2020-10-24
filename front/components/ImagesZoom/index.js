@@ -17,7 +17,7 @@ const ImagesZoom = ({ images, onClose }) => {
                 <div>
                     <Slick
                         initialSlide={0}
-                        afterChange={(slide) => setCurrnetSlide(slide)}
+                        beforeChange={(slide) => setCurrnetSlide(slide)}
                         infinite
                         arrows={false}
                         slidesToShow={1}

@@ -9,11 +9,11 @@ export const initialState = {
         content: '첫 번째 게시글 #헤시태그 #익스프레스',
 
         Images: [{
-            src: 'https://i3.ruliweb.com/img/20/10/24/17559455b8122edbd.jpg',
+            src: 'https://img2.quasarzone.com/editor/2020/10/23/aa5182ac1e6c8413cf2481a0fedf1643.jpg',
         }, {
-            src: 'https://i2.ruliweb.com/img/20/10/24/175593a071a1031c.png',
-        },{
-            src: 'https://i1.ruliweb.com/img/20/10/24/175593a299a1031c.jpeg'
+            src: 'https://img2.quasarzone.com/editor/2020/10/23/5b73ab27035604d1da049875abb6f361.jpg',
+        }, {
+            src: 'https://img2.quasarzone.com/editor/2020/10/23/aa5182ac1e6c8413cf2481a0fedf1643.jpg'
         }],
 
         Comments: [{
@@ -21,7 +21,7 @@ export const initialState = {
                 nickname: 'hero',
             },
             content: '드디어 댓글 구현이 되어가는군요',
-        },{
+        }, {
             User: {
                 nickname: 'hypercoder',
             },

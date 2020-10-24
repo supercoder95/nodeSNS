@@ -14,14 +14,14 @@ const UserProfile = () => {
     return (
         <Card
             actions={[
-                <div key="twit">짹짹<br />0</div>,
-                <div key="followings">짹짹<br />0</div>,
-                <div key="followers">짹짹<br />0</div>,
+                <div key="twit">새 글<br />0</div>,
+                <div key="followings">팔로잉<br />0</div>,
+                <div key="followers">팔로워<br />0</div>,
             ]}
         >
             <Card.Meta
                 avatar={<Avatar>supercoder</Avatar>}
-                title="Today's supercoder"
+                title="supercoder"
             />
             <Button onClick={onLogOut}>로그아웃</Button>
         </Card>
