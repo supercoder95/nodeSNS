@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 import LoginForm from '../components/LoginForm'
 import UserProfile from '../components/UserProfile'
 
-import  { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
     .ant-row {
@@ -37,7 +37,7 @@ const AppLayout = ({ children }) => {
             <Global />
             <Menu mode="horizontal">
                 <Menu.Item>
-                    <Link href="/"><a>슈퍼코더</a></Link>
+                    <Link href="/"><a>홈</a></Link>
                 </Menu.Item>
                 <Menu.Item>
                     <Link href="/profile"><a>프로필</a></Link>
@@ -57,7 +57,7 @@ const AppLayout = ({ children }) => {
                     {children}
                 </Col>
                 <Col xs={24} md={6}>
-                    <a href="https://www.naver.com" target="_blank" rel="noreferer noopener">네이버</a>
+                    <Link href="/signup"><a>Made my supercoder(kyuchan)</a></Link>
                 </Col>
             </Row>
 

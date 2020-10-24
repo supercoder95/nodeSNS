@@ -10,7 +10,7 @@ const App = ({ Component }) => {
                 <meta charSet="utf-8" />
                 <title>포크포크</title>
             </Head>
-            <div>공통 메뉴</div>
+            <div>LogoArea</div>
             <Component />
         </>
     )

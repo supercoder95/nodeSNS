@@ -20,12 +20,12 @@ export const initialState = {
             User: {
                 nickname: 'hero',
             },
-            content: '드디어 댓글 구현이 되어가는군요',
+            content: '드디어 댓글 구현',
         }, {
             User: {
                 nickname: 'hypercoder',
             },
-            content: '하이퍼코더 짜응'
+            content: '졸리다아아앙아ㅏ'
         }]
     }],
     imagePaths: [],
@@ -39,7 +39,7 @@ export const addPost = {
 
 const dummyPost = {
     id: 2,
-    content: '더미데이터입니다.',
+    content: '더미데이터',
     User: {
         id: 1,
         nickname: 'supercoder',
