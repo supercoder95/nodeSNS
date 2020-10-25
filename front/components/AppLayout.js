@@ -57,7 +57,7 @@ const AppLayout = ({ children }) => {
                     {children}
                 </Col>
                 <Col xs={24} md={6}>
-                    <a href="https://www.naver.com" target="_blank" rel="noreferer noopener">네이버</a>
+                    <Link href="/signup"><a>made by supercoder(kyuchan)</a></Link>
                 </Col>
             </Row>
 

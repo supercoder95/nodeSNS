@@ -9,11 +9,11 @@ export const initialState = {
         content: '첫 번째 게시글 #헤시태그 #익스프레스',
 
         Images: [{
-            src: 'https://img2.quasarzone.com/editor/2020/10/23/aa5182ac1e6c8413cf2481a0fedf1643.jpg',
+            src: 'https://media.vlpt.us/images/addiescode/post/737f7d13-3db7-4210-a686-d89b1f338388/KakaoTalk_Photo_2020-08-09-14-41-58.jpeg',
         }, {
-            src: 'https://img2.quasarzone.com/editor/2020/10/23/5b73ab27035604d1da049875abb6f361.jpg',
+            src: 'https://media.vlpt.us/images/wooder2050/post/eb9f8886-3466-44c7-bc01-eb73c2c58645/0_ah8yui7nqaz6b-v_.png',
         }, {
-            src: 'https://img2.quasarzone.com/editor/2020/10/23/aa5182ac1e6c8413cf2481a0fedf1643.jpg'
+            src: 'https://media.vlpt.us/images/wooder2050/post/2ce3d7b3-38a9-494d-a958-9d41377edc68/4%20(2).png'
         }],
 
         Comments: [{
@@ -25,7 +25,7 @@ export const initialState = {
             User: {
                 nickname: 'hypercoder',
             },
-            content: '하이퍼코더 짜응'
+            content: '오규찬은 졸리겠다.'
         }]
     }],
     imagePaths: [],

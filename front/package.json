@@ -21,7 +21,8 @@
     "react-redux": "7.2.1",
     "react-slick": "^0.27.12",
     "redux": "^4.0.5",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "url-loader": "4.1.1"
   },
   "devDependencies": {
     "eslint": "7.9.0",
