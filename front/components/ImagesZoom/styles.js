@@ -28,7 +28,7 @@ export const Header = styled.header`
 `
 
 export const Global = createGlobalStyle`
-    .slickslide {
+    .slick-slide {
         display: inline-block;
     }
     .ant-card-cover {
