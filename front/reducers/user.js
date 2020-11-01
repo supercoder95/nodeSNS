@@ -1,9 +1,14 @@
 export const initialState = {
-    loginLoading: false, //로그인 시도중 
-    logOutLoading: false, //로그아웃 시도중
+    logInLoading: false, //로그인 시도중 
     logInComplete: false,
     logInDone: false,
     logInError: null,
+    logOutLoading: false, //로그아웃 시도중
+    logOutDone: false,
+    logOutFailure: null,
+    signUpLoading: false, 
+    signUpDone: false,
+    signUpFailure: null,
     me: null,
     signUpData: {},
     loginData: {},
@@ -29,6 +34,15 @@ export const UNFOLLOW_REQUEST = "UNFOLLOW_REQUEST"
 export const UNFOLLOW_SUCCESS = "UNFOLLOW_SUCCESS"
 export const UNFOLLOW_FAILURE = "UNFOLLOW_FAILURE"
 
+const dummyUser = (data) => ({
+    ...action.data,
+    nickname: '오규찬',
+    id: 1,
+    Posts: [],
+    Followings: [],
+    Followers: [],
+})
+
 export const loginRequestAction = (data) => {
     return {
         type: LOG_IN_REQUEST,
@@ -49,22 +63,26 @@ const reducer = (state = initialState, action) => {
             console.log('reducer logIn')
             return {
                 ...state,
-                isLoggingIn: false,
+                logInLoading: true,
+                logInError: null,
+                logInDone: false,
+
+
             }
 
         case LOG_IN_SUCCESS:
             return {
                 ...state,
-                isLoggingIn: false,
-                isLoggedIn: true,
-                me: { ...action.data, nickname: '오규찬' },
+                logInLoading: false,
+                logInDone: true,
+                me: dummyUser(action.data),
             }
 
         case LOG_IN_FAILURE:
             return {
                 ...state,
-                isLoggingIn: false,
-                isLoggedIn: false,
+                logInLoading: false,
+                logInError: false,
 
             }
 
