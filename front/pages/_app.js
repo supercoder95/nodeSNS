@@ -3,6 +3,8 @@ import 'antd/dist/antd.css'
 import Head from 'next/head'
 import wrapper from '../store/configureStore'
 
+import withReduxSaga from 'next-redux-saga'
+
 const App = ({ Component }) => {
     return (
         <>
@@ -10,7 +12,6 @@ const App = ({ Component }) => {
                 <meta charSet="utf-8" />
                 <title>포크포크</title>
             </Head>
-            <div>LogoArea</div>
             <Component />
         </>
     )
@@ -21,4 +22,4 @@ App.propTypes = {
 }
 
 // export default App
-export default wrapper.withRedux(App);
+export default wrapper.withRedux(withReduxSaga(App));

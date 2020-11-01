@@ -1,27 +1,26 @@
 import { createWrapper } from 'next-redux-wrapper'
 import { applyMiddleware, compose, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import createSagaMiddleware from 'redux-saga'
 
-import thunkMiddleware from 'redux-thunk'
 import reducer from '../reducers/index'
 
+//saga
+import rootSaga from '../sagas'
+
 const loggerMiddleware = ({ dispatch, getState }) => (next) => (action) => {
-    // if( typeof action === 'function') {
-    //     return action(dispatch, getState, )
-    // }
     console.log(action)
     return next(action)
 }
 
 const configureStore = () => {
-    const middleware = [thunkMiddleware, loggerMiddleware]
+    const sagaMiddleware = createSagaMiddleware()
+    const middleware = [sagaMiddleware, loggerMiddleware]
     const enhancer = process.env.NODE_ENV === 'producion'
-        ? compose(applyMiddleware(...middleware)) 
+        ? compose(applyMiddleware(...middleware))
+        : composeWithDevTools(applyMiddleware(...middleware))
     const store = createStore(reducer, enhancer)
-    // store.dispatch({
-    //     type: 'CHANGE_NICKNAME',
-    //     data: 'hypercoder',
-    // })
+    store.sagaTask = sagaMiddleware.run(rootSaga)
     return store
 }
 

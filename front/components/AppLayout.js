@@ -26,6 +26,7 @@ const Global = createGlobalStyle`
 `
 
 const SearchInput = styled(Input.Search)`
+    margin: 0, auto
     vertical-align: middle;
 `;
 
@@ -35,7 +36,7 @@ const AppLayout = ({ children }) => {
     return (
         <div>
             <Global />
-            <Menu mode="horizontal">
+            <Menu theme="light" mode="horizontal" defaultSelectedKeys={['3']}>
                 <Menu.Item>
                     <Link href="/"><a>홈</a></Link>
                 </Menu.Item>
@@ -43,7 +44,7 @@ const AppLayout = ({ children }) => {
                     <Link href="/profile"><a>프로필</a></Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <SearchInput enterButton style={{ verticalAlign: 'middle ' }} />
+                    <SearchInput enterButton style={{ verticalAlign: 'middle' }} />
                 </Menu.Item>
                 <Menu.Item>
                     <Link href="/signup"><a>회원가입</a></Link>
@@ -53,17 +54,15 @@ const AppLayout = ({ children }) => {
                 <Col xs={24} md={6}>
                     {isLoggedIn ? <UserProfile /> : <LoginForm />}
                 </Col>
-                <Col xs={24} md={12}>
+                <Col xs={24} md={18}>
                     {children}
-                </Col>
-                <Col xs={24} md={6}>
-                    <Link href="/signup"><a>Made my supercoder(kyuchan)</a></Link>
                 </Col>
             </Row>
 
-        </div>
+        </div >
     )
 }
+
 
 AppLayout.propTypes = {
     children: PropTypes.node.isRequired,
