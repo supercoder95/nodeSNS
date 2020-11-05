@@ -5,10 +5,10 @@ export const initialState = {
     logInError: null,
     logOutLoading: false, //로그아웃 시도중
     logOutDone: false,
-    logOutFailure: null,
+    logOutError: null,
     signUpLoading: false, 
     signUpDone: false,
-    signUpFailure: null,
+    signUpErrorlogOutError: null,
     me: null,
     signUpData: {},
     loginData: {},
@@ -82,28 +82,31 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 logInLoading: false,
-                logInError: false,
+                logInError: action.error,
 
             }
 
         case LOG_OUT_REQUEST:
             return {
                 ...state,
-                isLoggingOut: true,
+                logOutLoading: true,
+                logOutDone: false,
+                logOutError: null,
             }
 
         case LOG_OUT_SUCCESS:
             return {
                 ...state,
-                isLoggingOut: false,
-                isLoggedIn: false,
+                logOutLoading: false,
+                logOutDone: true,
                 me: null,
             }
 
         case LOG_OUT_FAILURE:
             return {
                 ...state,
-                isLoggingOut: false,
+                logOutLoading: false,
+                logOutError: action.error,
             }
 
         default:
