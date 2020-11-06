@@ -1,25 +1,38 @@
-import AppLayout from '../components/AppLayout';
-import Head from 'next/head';
+import React, { useEffect } from 'react';
+import Router from 'next/router';
 import { useSelector } from 'react-redux';
-import NicknameEditForm from '../components/NicknameEditForm'
-import FollowList from '../components/FollowList'
+import Head from 'next/head';
+
+import NicknameEditForm from '../components/NicknameEditForm';
+import AppLayout from '../components/AppLayout';
+import FollowList from '../components/FollowList';
 
 const Profile = () => {
-    const { me } = useSelector((state) = state.user)
-
-    return (
-        <>
-            <Head>
-                <meta charSet="utf-8" />
-                <title>내 프로필 | 포크포크</title>
-            </Head>
-            <AppLayout>
-                <NicknameEditForm />
-                <FollowList header="팔로잉" data={me.followings} />
-                <FollowList header="팔로워" data={me.followers} />
-            </AppLayout>
-        </>
-    );
+  const { me } = useSelector((state) => state.user);
+  useEffect(() => {
+    if (!(me && me.id)) {
+      Router.push('/');
+    }
+  }, [me && me.id]);
+  if (!me) {
+    return null;
+  }
+  return (
+    <AppLayout>
+      <Head>
+        <title>내 프로필 | NodeBird</title>
+      </Head>
+      <NicknameEditForm />
+      <FollowList
+        header="팔로잉 목록"
+        data={me.Followings}
+      />
+      <FollowList
+        header="팔로워 목록"
+        data={me.Followers}
+      />
+    </AppLayout>
+  );
 };
 
 export default Profile;
