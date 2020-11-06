@@ -57,7 +57,7 @@ const dummyUser = (data) => ({
   id: 1,
   Posts: [{ id: 1 }],
   Followings: [{ nickname: '칠규찬' }, { nickname: 'Seven kyuchan' }, { nickname: 'hypercoder' }],
-  Followers: [{ nickname: '칠규찬' }, { nickname: 'Seven kyucha' }, { nickname: 'hypercoder' }],
+  Followers: [{ nickname: '칠규찬' }, { nickname: 'Seven kyuchan' }, { nickname: 'hypercoder' }],
 });
 
 export const loginRequestAction = (data) => ({
