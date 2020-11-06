@@ -26,12 +26,12 @@ const Global = createGlobalStyle`
 `
 
 const SearchInput = styled(Input.Search)`
-    margin: 0, auto
+    margin: 0, auto;
     vertical-align: middle;
 `;
 
 const AppLayout = ({ children }) => {
-    const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+    const { me } = useSelector((state) => state.user.isLoggedIn)
 
     return (
         <div>
@@ -52,7 +52,7 @@ const AppLayout = ({ children }) => {
             </Menu>
             <Row gutter={8}>
                 <Col xs={24} md={6}>
-                    {isLoggedIn ? <UserProfile /> : <LoginForm />}
+                    {me ? <UserProfile /> : <LoginForm />}
                 </Col>
                 <Col xs={24} md={18}>
                     {children}

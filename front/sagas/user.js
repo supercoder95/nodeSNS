@@ -1,8 +1,8 @@
 import { all, fork, takeLatest, delay, put } from 'redux-saga/effects';
 import axios from 'axios'
-import { 
+import {
     LOG_IN_SUCESS, LOG_IN_REQUEST, LOG_IN_FAILURE,
-    LOG_OUT_SUCESS, LOG_OUT_REQUEST, LOG_OUT_FAILURE, 
+    LOG_OUT_SUCESS, LOG_OUT_REQUEST, LOG_OUT_FAILURE,
     SIGN_UP_SUCCESS, SIGN_UP_REQUEST, SIGN_UP_FAILURE,
 
 } from '../reducers/user'
@@ -83,7 +83,7 @@ function* watchLogOut() {
 }
 
 function* watchSignUp() {
-    yield takeLatest(SIGN_IN_REQUEST, signUp)
+    yield takeLatest(SIGN_UP_REQUEST, signUp)
 }
 
 

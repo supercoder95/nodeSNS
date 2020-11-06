@@ -6,7 +6,7 @@ export const initialState = {
     logOutLoading: false, //로그아웃 시도중
     logOutDone: false,
     logOutError: null,
-    signUpLoading: false, 
+    signUpLoading: false,
     signUpDone: false,
     signUpErrorlogOutError: null,
     me: null,
@@ -59,6 +59,7 @@ export const logoutRequestAction = () => {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        // LOG_IN_REDUCER
         case LOG_IN_REQUEST:
             console.log('reducer logIn')
             return {
@@ -66,8 +67,6 @@ const reducer = (state = initialState, action) => {
                 logInLoading: true,
                 logInError: null,
                 logInDone: false,
-
-
             }
 
         case LOG_IN_SUCCESS:
@@ -86,6 +85,7 @@ const reducer = (state = initialState, action) => {
 
             }
 
+        // LOG_OUT_REDUCER
         case LOG_OUT_REQUEST:
             return {
                 ...state,
@@ -107,6 +107,29 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 logOutLoading: false,
                 logOutError: action.error,
+            }
+
+        // SGIN_UP_REDUCER
+        case SIGN_UP_REQUEST:
+            return {
+                ...state,
+                signUpLoading: true,
+                signUpDone: false,
+                signUpError: null,
+            }
+
+        case SIGN_UP_SUCCESS:
+            return {
+                ...state,
+                signUpLoading: false,
+                signUpDone: true,
+            }
+
+        case SIGN_UP_FAILURE:
+            return {
+                ...state,
+                signUpLoading: false,
+                signUpError: action.error,
             }
 
         default:

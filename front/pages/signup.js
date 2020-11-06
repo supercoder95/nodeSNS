@@ -2,9 +2,11 @@ import AppLayout from '../components/AppLayout'
 import Head from 'next/head'
 import { Checkbox, Form, Input, Button } from 'antd'
 import { useCallback, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 // import Password from 'antd/lib/input/Password'
 import useinput from '../hooks/useinput'
 import styled from 'styled-components'
+import { SIGN_UP_REQUEST } from '../reducers/user'
 
 const ErrorMessage = styled.div`
     color: red;
@@ -12,8 +14,10 @@ const ErrorMessage = styled.div`
 
 
 const Signup = () => {
-    // Id
-    const [id, onChangeId] = useinput('')
+    const dispatch = useDispatch()
+    const { signUpLoading } = useSelector((state) => state.user)
+    // email
+    const [email, onChangeEmail] = useinput('')
     // NickName
     const [nickname, onChangeNickname] = useinput('')
     // Password
@@ -40,7 +44,11 @@ const Signup = () => {
         if (!term) {
             return setTermError(true);
         }
-        console.log(id, nickname, password);
+        console.log(email, nickname, password)
+        dispatchEvent({
+            type: SIGN_UP_REQUEST,
+            data: { email, password, nickname },
+        })
     }, [password, passwordCheck, term])
 
     return (
@@ -51,13 +59,14 @@ const Signup = () => {
             </Head>
             <Form onFinish={onSubmit}>
                 <div>
-                    <label htmlFor="user-id">아이디</label>
+                    <label htmlFor="user-email">이메일</label>
                     <br />
                     <Input
-                        name="user-id"
-                        value={id}
+                        name="user-email"
+                        type="email"
+                        value={email}
                         required
-                        onChange={onChangeId}
+                        onChange={onChangeEmail}
                     />
                 </div>
                 <div>
@@ -104,7 +113,7 @@ const Signup = () => {
                     {termError && <ErrorMessage>약관에 동의하셔야 합니다.</ErrorMessage>}
                 </div>
                 <div style={{ marginTop: 10 }}>
-                    <Button type="primary" htmlType="submit">제출</Button>
+                    <Button type="primary" htmlType="submit" loading={signUpLoading}>가입하기</Button>
                 </div>
             </Form>
         </AppLayout>
