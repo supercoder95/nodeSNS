@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start"
   },
-  "author": "ZeroCho",
+  "author": "supercoder",
   "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
